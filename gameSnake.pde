@@ -81,7 +81,7 @@ void runGame() {
 
 //==============================Keypress==============================
 
-void keyPressed() {
+void keyPressed() {/*
   if(key == 'w' || key == 'a' || key == 's' || key == 'd') {
     button = key;
   }
@@ -89,10 +89,10 @@ void keyPressed() {
     pause = true;
   } else if(key==' ') {
     pause = false;
-  }
+  }*/
 }
 
-void keyReleased() {
+void keyReleased() {/*
     if(keyCode == ENTER) {
       if(status("lost") || status("running")) {
         status = "start";
@@ -100,19 +100,21 @@ void keyReleased() {
       } else if(status("getUsername")) {
         status = "running";
       }
-    }
+    }*/
    
 }
 
 void keyTyped() {
-  if(status("getUsername")) {
-    if(((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || (key >= '0' && key <= '9') || key == ' ') && keyCode != ENTER) {
+  println("keyTyped");
+  println(key == CODED, key, BACKSPACE, key == BACKSPACE);
+    if(((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || (key >= '0' && key <= '9') || key == ' ') && (key != CODED && keyCode != ENTER)) {
       user.addLetter(key);
-    } else if(key == CODED && keyCode == BACKSPACE) {
+    } else if(key == BACKSPACE) {
+      System.out.println("detected Backspace");
       user.remLetter();
     }
-    //System.out.println(user.getName());
-  }
+    System.out.println(user.getName());
+  
 }
 
 //==============================Others==============================

@@ -21,9 +21,9 @@ class User {
   }
   
   void remLetter() {
-    if(name.length() != 0) {
+    if(name.length() > 0) {
       System.out.println("rem");
-      name = name.substring(0, name.length()-2);
+      name = name.substring(0, name.length() - 1);
     }
   }
   
