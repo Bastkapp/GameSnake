@@ -81,7 +81,7 @@ void runGame() {
 
 //==============================Keypress==============================
 
-void keyPressed() {/*
+void keyPressed() {
   if(key == 'w' || key == 'a' || key == 's' || key == 'd') {
     button = key;
   }
@@ -89,24 +89,11 @@ void keyPressed() {/*
     pause = true;
   } else if(key==' ') {
     pause = false;
-  }*/
+  }
 }
 
-void keyReleased() {/*
-    if(keyCode == ENTER) {
-      if(status("lost") || status("running")) {
-        status = "start";
-        i = 0;
-      } else if(status("getUsername")) {
-        status = "running";
-      }
-    }*/
-   
-}
-
-void keyTyped() {
-  println("keyTyped");
-  println(key == CODED, key, BACKSPACE, key == BACKSPACE);
+void keyReleased() {
+  if(status("getUsername")){
     if(((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || (key >= '0' && key <= '9') || key == ' ') && (key != CODED && keyCode != ENTER)) {
       user.addLetter(key);
     } else if(key == BACKSPACE) {
@@ -114,6 +101,21 @@ void keyTyped() {
       user.remLetter();
     }
     System.out.println(user.getName());
+  }
+  if(keyCode == ENTER) {
+    if(status("lost") || status("running")) {
+      status = "start";
+      i = 0;
+    } else if(status("getUsername")) {
+      status = "running";
+    }
+  }
+}
+
+void keyTyped() {
+  println("keyTyped");
+  println(key == CODED, key, BACKSPACE, key == BACKSPACE);
+    
   
 }
 
