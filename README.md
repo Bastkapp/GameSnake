@@ -1,4 +1,5 @@
 # GameSnake
-Basic Snake game created with Processing with leaderboard.
+My first game made with Processing
 
-The you can not delete a character of the username.
+Snake Game withUsername input and leaderboard
+Movment with 'W', 'A', 'S', 'D'
