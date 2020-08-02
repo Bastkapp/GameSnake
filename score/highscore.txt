@@ -5,3 +5,5 @@ Ban: 9
 kekw: 10
 Ban: 11
 Jonny: 6
+hello men: 16
+timon: 10
