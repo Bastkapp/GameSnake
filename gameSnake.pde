@@ -82,12 +82,20 @@ void runGame() {
 //==============================Keypress==============================
 
 void keyPressed() {
-  if(key == 'w' || key == 'a' || key == 's' || key == 'd') {
-    button = key;
+  if(key == CODED) {
+    return;
   }
-  if(key==' ' && pause == false) {
+  
+  String inputString = str(key);
+  inputString = inputString.toLowerCase();
+  char input = inputString.charAt(0);
+  
+  if(input == 'w' || input == 'a' || input == 's' || input == 'd') {
+    button = input;
+  }
+  if(input == ' ' && pause == false) {
     pause = true;
-  } else if(key==' ') {
+  } else if(input == ' ') {
     pause = false;
   }
 }
